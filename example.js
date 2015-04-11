@@ -1,4 +1,5 @@
-var createError = require('./index.js'),
-  MyError = createError('MyError');
+var createError = require('./index.js');
+var BaseError   = createError('BaseError');
+var CustomError = createError('CustomError', BaseError);
 
-throw new MyError('this is an error');
+throw new CustomError('throw a custom error')

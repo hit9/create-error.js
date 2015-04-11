@@ -2,14 +2,17 @@
 
 var util = require('util');
 
-exports = module.exports = function(name) {
+exports = module.exports = function(name, base) {
+  base = base || Error;
+
   var _ = function(message) {
-    Error.call(this);
-    Error.captureStackTrace(this, this.constructor)
+    base.call(this);
+    base.captureStackTrace(this, this.constructor)
     this.message = message || '';
   }
-  util.inherits(_, Error);
+  util.inherits(_, base);
   _.prototype.name = name;
+  _.captureStackTrace = base.captureStackTrace;
   _.prototype.inspect = function() {
     return util.format('[%s]', this.name);
   };

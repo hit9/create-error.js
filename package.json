@@ -1,12 +1,12 @@
 {
     "name": "create-error.js",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "repository": {
         "type": "git",
         "url": "git://github.com/hit9/create-error.js"
 
     },
-    "description": "Create custom error types.",
+    "description": "Create custom extendable error types.",
     "author": "hit9 <hit9@icloud.com>",
     "keywords": ["error"],
     "license": "MIT"
