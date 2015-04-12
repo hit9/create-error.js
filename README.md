@@ -10,7 +10,7 @@ npm install create-error.js
 example:
 
 ```js
-var createError = require('./index.js');
+var createError = require('create-error.js');
 var BaseError   = createError('BaseError');
 var CustomError = createError('CustomError', BaseError);
 
