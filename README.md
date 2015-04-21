@@ -14,6 +14,8 @@ var createError = require('create-error.js');
 var BaseError   = createError('BaseError');
 var CustomError = createError('CustomError', BaseError);
 
+console.log(new CustomError() instanceof BaseError)  // true
+
 throw new CustomError('throw a custom error')
 ```
 
