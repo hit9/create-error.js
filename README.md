@@ -19,6 +19,15 @@ console.log(new CustomError() instanceof BaseError)  // true
 throw new CustomError('throw a custom error')
 ```
 
+APi Refs
+--------
+
+### createError(name[, base, code])
+
+* `base` default: `Error`
+* `code` default: `1`
+* if arguments length is 2 and the 2nd argument is an number, use it as `code`, else as `base`.
+
 License
 -------
 
