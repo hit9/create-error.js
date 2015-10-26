@@ -21,10 +21,15 @@ exports = module.exports = function(name, base, code) {
     }
   }
 
-  var _ = function(message) {
+  var _ = function(err) {
     base.call(this);
     base.captureStackTrace(this, this.constructor)
-    this.message = message || '';
+    if (err instanceof Error) {
+      this.message = err.message;
+      this.code = err.code;
+    } else {
+      this.message = err || '';
+    }
   }
   util.inherits(_, base);
   _.prototype.name = name;
